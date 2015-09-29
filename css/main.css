@@ -1,0 +1,255 @@
+* {
+	box-sizing: border-box;
+}
+
+#wrapper {
+	padding: 25px 25px;
+	max-width: 1000px;
+	margin: 25px auto;
+}
+
+h5 {
+	font-weight: bold;
+}
+
+.label {
+	color: #333;
+	font-size: 100%;
+	padding: 0;
+	display: block;
+    text-align: left;
+}
+
+audio, canvas, progress, video {
+	max-width: 100%;
+}
+
+
+/* TABLES */
+
+.tableHolder {
+	border-radius: 5px;
+	background: #eee;
+	padding: 25px;
+}
+
+.calcForm {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.calcResults {
+	margin: 25px 0;
+}
+
+.loanDetailsTable {
+    background-color: #fff;
+}
+
+.formRow  {
+	padding: 0 0 5px;
+	clear: both;
+}
+
+.calcForm .formRow {
+    padding: 20px 30px;
+    background-color: #fff;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
+.formRow.yearlyRate {
+	display: none;
+}
+
+.unit, form .value {
+	display: inline;
+}
+
+table .value h5 {
+	padding: 0;
+	margin: 0;
+}
+ 
+.calcResults td {
+	/*text-align: center;*/
+}
+
+.loanSummaryTable {
+	cursor: pointer;
+}
+
+.loanDetailsTable {
+	display: none;
+}
+
+.loanDetailsTable.active {
+	display:table-row;
+}
+
+.accordionWrapper>tr.active>td {
+	background-color: #fafafa !important;
+}
+
+.bankLogo span {
+	background: none no-repeat scroll center center transparent;
+	background-size: auto 100%;
+	width: 40px;
+	height: 40px;
+	margin: 5px 0;
+	display: block;
+}
+
+.slsp .bankLogo span {
+	background-image: url(../images/slsp.jpg);
+}
+
+.vub .bankLogo span {
+	background-image: url(../images/vub.jpg);
+}
+
+.uni .bankLogo span {
+	background-image: url(../images/uni.jpg);
+}
+
+.sber .bankLogo span {
+	background-image: url(../images/sber.jpg);
+}
+
+
+/* Slider Start */
+
+.slider {
+	margin: 20px auto 50px;
+	background: #ddd;
+	border: none;
+	border-radius: 5px; 
+}
+
+.ui-slider-horizontal.ui-slider-pips {
+	margin-bottom: 35px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	border-radius: 50%;
+	width: 28px;
+    height: 28px;
+    margin-top: -4px;
+	margin-left: -13px;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background-image: none;
+	background-color: #00afef;
+}
+
+.ui-slider-handle {
+	outline: none;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+    background-color: #0785AB;
+    background-image: none;
+	border-radius: 5px;
+	box-shadow: 2px 2px 9px #666 inset;
+}
+
+.ui-slider-pips .ui-slider-line {
+	background: #b9b9b9;
+    height: 12px;
+    left: 50%;
+    top: -20px;
+}
+
+.ui-slider-pips [class*=ui-slider-pip-selected] .ui-slider-line, .ui-slider-pips .ui-slider-pip-inrange .ui-slider-line {
+	background: #045278;
+    z-index: 1;
+}
+
+.ui-slider-pips .ui-slider-label {
+	width: 55px;
+    text-align: center;
+    margin-left: -26px;
+}
+
+.ui-slider-pip-last .ui-slider-line, .ui-slider-pip-first .ui-slider-line {
+	display: none;
+}
+
+.totalAmount .ui-slider-pip:nth-child(odd) .ui-slider-line {
+	height: 22px;
+}
+
+.totalAmount .ui-slider-pip:nth-child(odd) .ui-slider-label {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.totalAmount .ui-slider-pip:nth-child(even) .ui-slider-label {
+    font-size: 9px;
+    margin-top: -8px;
+}
+
+.ui-slider-pips [class*=ui-slider-pip-selected] {
+	color: #045278;
+}
+
+/* Slider End */
+
+
+
+/* Graphs Start */
+
+.tooltipCustom {
+    position: absolute;
+    display: inline-block;
+    min-width: 5em;
+    padding: .5em;
+    background: #F4C63D;
+    color: #453D3F;
+    font-weight: 700;
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+	stroke: #97bd4c;
+}
+
+.ct-series-a .ct-area, .ct-series-a .ct-slice-pie {
+	fill: #97bd4c;
+	fill-opacity: 0.3;
+}
+
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+	stroke:#ef58a0;
+}
+
+.ct-series-b .ct-area, .ct-series-b .ct-slice-pie {
+	fill: #ef58a0;
+	fill-opacity: 0.3;
+}
+
+.ct-series-c .ct-bar, .ct-series-c .ct-line, .ct-series-c .ct-point, .ct-series-c .ct-slice-donut {
+	stroke:#8e2a8b;
+}
+
+.ct-series-c .ct-area, .ct-series-c .ct-slice-pie {
+	fill: #8e2a8b;
+	fill-opacity: 0.2;
+}
+
+.ct-chart {
+	height: 200px;
+}
+
+.ct-line {
+	stroke-width: 3px;
+}
+
+.ct-point {
+	stroke-width: 7px;
+}
+
+/* Graphs End */
