@@ -1,4 +1,4 @@
-(function(){
+(function () {
 	
 	var app = angular.module("calc",[]);
 	
@@ -188,6 +188,9 @@ var formatThousands = function(){
 
 
 var createTotalAmountSlider = function(){
+    var sliderDiv = $("#totalAmountSlider");
+    var inputField = $( "#totalAmount" );
+    
 	// Create the array of values
 	var totalAmountArray = [ ];
 	for(i = 0; i < 201; i++) { 
@@ -200,48 +203,60 @@ var createTotalAmountSlider = function(){
 		totalAmountArray.push((i*1000).toString());
 	}
 	// Create the slider
-	$("#totalAmountSlider").slider({
+	sliderDiv.slider({
 	    range: "min",
 		value: 0,
 		min: 0,
 		max: (totalAmountArray.length)-1,
 		step: 1,
+        create: function(event, ui) {
+            $(this).slider( "value", inputField.val()/1000 );
+        },
 		slide: function(event, ui) {
-			$("#totalAmount").val(totalAmountArray[ui.value]);
+			inputField.val(totalAmountArray[ui.value]);
 		},
 		change: function( event, ui ) {
-			$("#totalAmount").val(totalAmountArray[ui.value]);
+			inputField.val(totalAmountArray[ui.value]);
 		}
 	}).slider("pips",{
 		rest: "label",
         labels: totalAmountArray,
 		step: 25
 	});
-	// Update the slider when the input value gets updated
-	$( "#totalAmount" ).change(function() {
-		$("#totalAmountSlider").slider( "value", this.value/1000 );
+        
+    // Update the slider when the input value gets updated
+    inputField.change(function() {
+		sliderDiv.slider( "value", this.value/1000 );
     });
+
 };
 
 
 var createTotalDurationSlider = function(){
+    
+    var sliderDiv = $("#totalDurationSlider");
+    var inputField = $( "#totalDuration" );
+    
 	// Create the array of values
 	var totalDurationArray = [ ];
 	for(i = 0; i < 31; i++) { 
 		totalDurationArray.push(i.toString());
 	}
 	// Create the slider
-	$("#totalDurationSlider").slider({
+	sliderDiv.slider({
 	    range: "min",
 		value: 0,
 		min: 0,
 		max: (totalDurationArray.length)-1,
 		step: 1,
+        create: function(event, ui) {
+            $(this).slider( "value", inputField.val() );
+        },
 		slide: function(event, ui) {
-			$("#totalDuration").val(totalDurationArray[ui.value]);
+			inputField.val(totalDurationArray[ui.value]);
 		},
 		change: function( event, ui ) {
-			$("#totalDuration").val(totalDurationArray[ui.value]);
+			inputField.val(totalDurationArray[ui.value]);
 		}
 	}).slider("pips",{
 		rest: "label",
@@ -249,8 +264,8 @@ var createTotalDurationSlider = function(){
 		step: 5
 	});
 	// Update the slider when the input value gets changed
-	$( "#totalDuration" ).change(function() {
-      $("#totalDurationSlider").slider( "value", this.value );
+	inputField.change(function() {
+      sliderDiv.slider( "value", this.value );
     });
 };
 

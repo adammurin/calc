@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sk" ng-app="calc">
 	<head>
 		<!-- jQuery -->
@@ -205,7 +205,6 @@
 								<div style="width: 100%;height:100px;background:#aaa;color:#fff;font-size:40px;padding:20px;text-align:center;">
 									Graf
 								</div>
-								<div class="ct-chart ct-perfect-fourth"></div> 
 							</td>
 						</tr>
 						
